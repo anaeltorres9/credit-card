@@ -1,0 +1,177 @@
+.attribution {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	font-size: 12px;
+	opacity: 0.5;
+}
+.attribution p {
+	margin: 10px;
+}
+
+/* Estilo general para las tarjetas */
+.cardFront,
+.cardBack {
+	max-width: 28rem;
+	height: 15.5rem;
+	border-radius: 10px;
+	background-size: cover;
+	color: var(--White);
+	position: relative;
+	padding: 32px;
+}
+
+/* Card Front */
+.cardFront {
+	background-image: url('/assets/bg-card-front.png'); /* Ruta absoluta */
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	margin: 0 auto 32px auto;
+}
+
+.cardFront div {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	word-spacing: 6px;
+}
+
+.cardFront > span {
+	font-size: clamp(22px, 2.5vw, 27px);
+	letter-spacing: 4px;
+	margin-bottom: 25px;
+}
+
+.cardFront div span {
+	font-size: 16px;
+}
+
+.cardFront div span:first-child {
+	text-transform: uppercase;
+}
+
+.cardFront::after {
+	content: url('/assets/card-logo.svg'); /* Ruta absoluta */
+	position: absolute;
+	top: 27px;
+	left: 27px;
+}
+
+/* Card Back */
+.cardBack {
+	background-image: url('/assets/bg-card-back.png'); /* Ruta absoluta */
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	margin: 0 2rem 0 auto;
+}
+
+.cardBack span {
+	position: absolute;
+	right: 60px;
+	top: 109px;
+	font-size: 24px;
+}
+
+/* Contenedor para las tarjetas */
+.cardDeco {
+	width: 54%;
+	padding: 2rem;
+	position: relative; /* Asegura que los elementos con position: absolute se alineen correctamente */
+}
+
+/* Contenedor de overflow */
+.cardOverflow {
+	width: 46%;
+	overflow: hidden;
+}
+
+.cardOverflow > div {
+	transition: transform 0.35s ease-in-out;
+}
+
+/* Botón primario */
+.btn-primary {
+	background: var(--Verdarviolet);
+	border: none;
+	padding: 15px 20px;
+	color: var(--White);
+	cursor: pointer;
+	border-radius: 6px;
+	font-size: 18px;
+}
+
+.btn-primary:hover {
+	opacity: 0.9;
+}
+
+/* Input */
+.card-input {
+	padding: 13px;
+	border: 1px solid var(--Dargrayisviolet);
+	border-radius: 7px;
+}
+
+.card-input::placeholder {
+	opacity: 0.7;
+}
+
+/* Media Queries */
+@media screen and (max-width: 585px) {
+	.cardFront {
+		left: 0 !important;
+	}
+
+	.cardBack {
+		right: 0 !important;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.cardFront,
+	.cardBack {
+		width: 90%; /* En lugar de escalar, ajusta el ancho */
+		height: auto;
+		margin: 1rem auto;
+	}
+
+	.cardDeco {
+		width: 100%;
+	}
+
+	.cardFront {
+		top: 4rem;
+		left: 0;
+		position: relative;
+	}
+
+	.cardBack {
+		top: 2rem;
+		right: 0;
+		position: relative;
+	}
+
+	.cardForm,
+	.cardThanks {
+		width: 100%;
+	}
+
+	.cardOverflow {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.cardFront,
+	.cardBack {
+		width: 85%; /* Ajuste proporcional */
+	}
+}
+
+@media screen and (max-width: 1010px) {
+	.cardBack {
+		margin: 0 auto;
+	}
+}
